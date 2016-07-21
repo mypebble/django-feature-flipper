@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'feature_flipper',
+
+    'test_project.test_features',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -126,3 +128,5 @@ FEATURE_FLIPPER_FLAGS = (
     ('feature_for_all', u'Feature for everyone'),
     ('restricted_feature', u'Restricted Feature'),
 )
+
+FEATURE_FLIPPER_MODEL = 'test_features.TestFeatureFlipper'
