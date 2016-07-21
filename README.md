@@ -27,12 +27,10 @@ depending on your user, or customise your own.
 Set the flag choices in your `settings.py` file as:
 
 ```python
-FEATURE_FLIPPER = {
-  'FEATURE_FLAGS': (
-    ('simple_feature', u'Simple Feature'),
-    ('beta_testing', u'Beta Testing'),
-  ),
-}
+FEATURE_FLIPPER_FLAGS = (
+  ('simple_feature', u'Simple Feature'),
+  ('beta_testing', u'Beta Testing'),
+)
 ```
 
 When you add features, simply add flags here and your application will be able
@@ -64,7 +62,5 @@ determining whether to show the feature to a user. The final part is to
 reference this in your `settings.py`:
 
 ```python
-FEATURE_FLIPPER = {
-  'FEATURE_MODEL': 'myapp.MyFeatureFlipper',
-}
+FEATURE_FLIPPER_MODEL = 'myapp.MyFeatureFlipper',
 ```

@@ -30,7 +30,7 @@ class AbstractFeatureFlipper(models.Model):
     objects = FeatureFlipperQuerySet.as_manager()
 
     feature = models.CharField(
-        max_length=15, choices=flipper_settings.FEATURE_FLAGS)
+        max_length=15, choices=flipper_settings.FEATURE_FLIPPER_FLAGS)
     everyone = models.BooleanField(default=False)
 
     class Meta:
@@ -45,3 +45,6 @@ class FeatureFlipper(AbstractFeatureFlipper):
     USER_FEATURE_FIELD = 'user'
 
     user = models.ForeignKey(flipper_settings.AUTH_USER_MODEL)
+
+    class Meta:
+        swappable = 'FEATURE_FLIPPER_MODEL'
