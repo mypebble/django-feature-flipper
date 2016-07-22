@@ -8,7 +8,7 @@ FeatureFlipper = get_feature_model()
 
 
 def _is_m2m(user_field):
-    field = FeatureFlipper._meta.get_field_by_name(user_field)[0]
+    field = FeatureFlipper._meta.get_field(user_field)
     return isinstance(field, ManyToManyField)
 
 
@@ -16,7 +16,7 @@ def get_horizontal_filter():
     """If the USER_FEATURE_FIELD is a M2M field, set it to filter_horizontal.
     """
     user_field = FeatureFlipper.USER_FEATURE_FIELD
-    return user_field if _is_m2m(user_field) else ()
+    return (user_field, ) if _is_m2m(user_field) else ()
 
 
 def get_flat_filter():
