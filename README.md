@@ -64,3 +64,11 @@ reference this in your `settings.py`:
 ```python
 FEATURE_FLIPPER_MODEL = 'myapp.MyFeatureFlipper',
 ```
+
+## Supported Django Versions
+
+This supports Django 1.9 and later.
+
+| Feature Flipper | Django |
+|-----------------|--------|
+|      0.0.1      |   1.9  |
