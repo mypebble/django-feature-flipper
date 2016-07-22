@@ -1,3 +1,6 @@
+dependencies:
+  post:
+    - python setup.py develop
 test:
   pre:
     - cd test_project && python manage.py migrate
