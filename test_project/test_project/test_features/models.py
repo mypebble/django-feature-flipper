@@ -12,6 +12,11 @@ class Company(models.Model):
     company_name = models.CharField(max_length=10, default='')
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
 
+    def __unicode__(self):
+        """
+        """
+        return self.company_name
+
 
 class TestFeatureFlipper(AbstractFeatureFlipper):
     """
