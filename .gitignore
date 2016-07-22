@@ -89,3 +89,6 @@ ENV/
 .ropeproject
 
 db.sqlite3
+
+# Pandoc generated output
+README.txt

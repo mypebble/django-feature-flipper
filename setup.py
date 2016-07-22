@@ -1,7 +1,10 @@
 from setuptools import find_packages, setup
 
-with open('README.md') as f:
-    LONG_DESCRIPTION = f.read()
+try:
+    with open('README.txt') as f:
+        LONG_DESCRIPTION = f.read()
+except:
+    LONG_DESCRIPTION = ''
 
 setup(
     name='django-feature-flipper',
