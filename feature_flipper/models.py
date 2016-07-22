@@ -1,8 +1,24 @@
 from __future__ import unicode_literals
 
+from django.apps import apps
+from django.core.exceptions import ImproperlyConfigured
 from django.db import models
 
 from feature_flipper import flipper_settings
+
+
+def get_feature_model():
+    """Return the FeatureFlipper model defined in settings.py
+    """
+    try:
+        return apps.get_model(flipper_settings.FEATURE_FLIPPER_MODEL)
+    except ValueError:
+        raise ImproperlyConfigured(
+            "FEATURE_FLIPPER_MODEL must be of the form 'app_label.model_name'")
+    except LookupError:
+        raise ImproperlyConfigured(
+            "FEATURE_FLIPPER_MODEL refers to model '{}' that has not been"
+            " installed".format(flipper_settings.FEATURE_FLIPPER_MODEL))
 
 
 class FeatureFlipperQuerySet(models.query.QuerySet):

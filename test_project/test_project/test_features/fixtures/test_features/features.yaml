@@ -1,0 +1,40 @@
+- pk: 1
+  model: auth.User
+  fields:
+    username: test_user
+    password: pbkdf2_sha256$24000$Ik1dNpwuLpCR$jyp/oyoCCUSnfBE4m+k+pgaSjgQzL6N28mYfO8MYdcw=
+    first_name: test
+    last_name: user
+    email: test@example.com
+
+- pk: 1
+  model: test_features.Company
+  fields:
+    user: 1
+    company_name: Test
+
+- pk: 2
+  model: test_features.Company
+  fields:
+    user: 1
+    company_name: Everyone
+
+- pk: 3
+  model: test_features.Company
+  fields:
+    user: 1
+    company_name: Nobody
+
+- pk: 1
+  model: test_features.TestFeatureFlipper
+  fields:
+    company: 1
+    feature: restricted_feature
+    everyone: no
+
+- pk: 2
+  model: test_features.TestFeatureFlipper
+  fields:
+    company: 2
+    feature: feature_for_all
+    everyone: yes

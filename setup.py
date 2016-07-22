@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import find_packages, setup
 
 with open('README.md') as f:
     LONG_DESCRIPTION = f.read()
@@ -6,9 +6,7 @@ with open('README.md') as f:
 setup(
     name='django-feature-flipper',
     version='0.0.1',
-    packages=[
-        'feature_flipper',
-    ],
+    packages=find_packages(),
     license='MIT',
     long_description=LONG_DESCRIPTION,
 )
