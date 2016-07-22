@@ -6,6 +6,8 @@ from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
 
+from feature_flipper import flipper_settings
+
 
 class Migration(migrations.Migration):
 
@@ -21,7 +23,7 @@ class Migration(migrations.Migration):
             name='FeatureFlipper',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('feature', models.CharField(choices=[(b'feature_for_all', 'Feature for everyone'), (b'restricted_feature', 'Restricted Feature')], max_length=15)),
+                ('feature', models.CharField(choices=flipper_settings.FEATURE_FLIPPER_FLAGS, max_length=15)),
                 ('everyone', models.BooleanField(default=False)),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
