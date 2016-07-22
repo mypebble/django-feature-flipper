@@ -46,7 +46,7 @@ class AbstractFeatureFlipper(models.Model):
     objects = FeatureFlipperQuerySet.as_manager()
 
     feature = models.CharField(
-        max_length=15, choices=flipper_settings.FEATURE_FLIPPER_FLAGS)
+        max_length=200, choices=flipper_settings.FEATURE_FLIPPER_FLAGS)
     everyone = models.BooleanField(default=False)
 
     class Meta:
