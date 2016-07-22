@@ -16,7 +16,7 @@ def get_horizontal_filter():
     """If the USER_FEATURE_FIELD is a M2M field, set it to filter_horizontal.
     """
     user_field = FeatureFlipper.USER_FEATURE_FIELD
-    return user_field if _is_m2m(user_field) else None
+    return user_field if _is_m2m(user_field) else ()
 
 
 def get_flat_filter():
