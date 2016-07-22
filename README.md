@@ -71,4 +71,4 @@ This supports Django 1.9 and later.
 
 | Feature Flipper | Django |
 |-----------------|--------|
-|      0.0.1      |   1.9  |
+|      0.0.2      |   1.9  |
