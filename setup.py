@@ -12,7 +12,7 @@ setup(
     author_email='scott.walton@mypebble.co.uk',
     description='A simple, customisable, feature flipper',
     url='https://github.com/mypebble/django-feature-flipper.git',
-    version='0.0.6',
+    version='0.0.7',
     packages=find_packages(),
     license='MIT',
     long_description=LONG_DESCRIPTION,

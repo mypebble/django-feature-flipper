@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 
+from feature_flipper import flipper_settings
+
 
 class Migration(migrations.Migration):
 
@@ -15,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='featureflipper',
             name='feature',
-            field=models.CharField(choices=[(b'feature_for_all', 'Feature for everyone'), (b'restricted_feature', 'Restricted Feature')], max_length=200),
+            field=models.CharField(choices=flipper_settings.FEATURE_FLIPPER_FLAGS, max_length=200),
         ),
     ]

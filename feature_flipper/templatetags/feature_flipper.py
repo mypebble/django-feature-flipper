@@ -8,13 +8,13 @@ from ..models import get_feature_model
 register = template.Library()
 
 
-def show_feature(item, feature):
+def show_feature(user, feature):
     """Return True/False whether the assigned feature can be displayed. This is
     primarily used in the template tag to determine whether to render the
     content inside itself.
     """
     FeatureFlipper = get_feature_model()
-    return FeatureFlipper.objects.show_feature(item, feature)
+    return FeatureFlipper.objects.show_feature(user, feature)
 
 
 @register.tag(name='flipper')
