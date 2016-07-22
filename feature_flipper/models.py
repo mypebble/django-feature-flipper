@@ -52,6 +52,12 @@ class AbstractFeatureFlipper(models.Model):
     class Meta:
         abstract = True
 
+    def __unicode__(self):
+        """
+        """
+        user = getattr(self, self.USER_FEATURE_FIELD)
+        return u'Feature {} for user {}'.format(self.feature, user)
+
 
 class FeatureFlipper(AbstractFeatureFlipper):
     """A feature flipper hooked up to the Django User referenced by the user's
