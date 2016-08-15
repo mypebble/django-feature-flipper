@@ -65,6 +65,35 @@ reference this in your `settings.py`:
 FEATURE_FLIPPER_MODEL = 'myapp.MyFeatureFlipper',
 ```
 
+## Using in Templates
+
+To use the feature flipper in your templates, just load the `feature_flipper`
+library and use the `flipper` template tag:
+
+```html
+{% load feature_flipper %}
+
+<ul class="features">
+  {% flipper request.user "simple_feature" %}
+  <li><a href="/simple">Simple feature</a></li>
+  {% endflipper %}
+
+  {% flipper request.user "beta_testing" %}
+  <li><a href="/testing">Beta-testing feature</a></li>
+  {% endflipper %}
+</ul>
+```
+
+### The `feature` tag
+
+The `feature` template tag is a simple template tag that takes two arguments:
+
+1. The user requesting access
+2. The feature string to check for
+
+For custom feature flippers, the `user` argument is simply the alternative user
+identifier, for example the user's organisation.
+
 ## Supported Django Versions
 
 This supports Django 1.9 and later.
