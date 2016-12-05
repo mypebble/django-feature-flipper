@@ -43,8 +43,11 @@ class FlipperNode(template.Node):
         """
         user = self._get_value(self.user_key, context)
         feature = self._get_value(self.feature, context)
-        allowed = show_feature(user, feature)
 
+        if feature is None:
+            return ''
+
+        allowed = show_feature(user, feature)
         return self.nodelist.render(context) if allowed else ''
 
     def _get_value(self, key, context):
@@ -57,4 +60,4 @@ class FlipperNode(template.Node):
             return key[1:-1]
         if key in string.digits:
             return int(key)
-        return context[key]
+        return context.get(key, None)
