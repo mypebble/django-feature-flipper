@@ -57,4 +57,4 @@ class FlipperNode(template.Node):
             return key[1:-1]
         if key in string.digits:
             return int(key)
-        return context[key]
+        return context.get(key, False)
