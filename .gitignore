@@ -93,3 +93,6 @@ db.sqlite3
 # Pandoc generated output
 README.txt
 README.rst
+
+# Editors
+.vscode/
