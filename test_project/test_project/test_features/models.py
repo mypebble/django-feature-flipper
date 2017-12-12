@@ -10,7 +10,8 @@ class Company(models.Model):
     """
     """
     company_name = models.CharField(max_length=10, default='')
-    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def __unicode__(self):
         """
@@ -23,4 +24,4 @@ class TestFeatureFlipper(AbstractFeatureFlipper):
     """
     USER_FEATURE_FIELD = 'company'
 
-    company = models.ForeignKey(Company)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
