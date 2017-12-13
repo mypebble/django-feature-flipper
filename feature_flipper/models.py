@@ -66,7 +66,8 @@ class FeatureFlipper(AbstractFeatureFlipper):
     """
     USER_FEATURE_FIELD = 'user'
 
-    user = models.ForeignKey(flipper_settings.AUTH_USER_MODEL)
+    user = models.ForeignKey(
+        flipper_settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     class Meta:
         swappable = 'FEATURE_FLIPPER_MODEL'
