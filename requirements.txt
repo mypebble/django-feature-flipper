@@ -1,5 +1,5 @@
 Django==1.9.8
-PyYAML==3.11
+PyYAML==5.4
 argparse==1.2.1
 wsgiref==0.1.2
 django-nose==1.4.4
